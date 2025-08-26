@@ -1,0 +1,192 @@
+/* style_top.css */
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #ffffff;
+  color: #333;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #007acc;
+  color: white;
+  padding: 10px 20px;
+  height: 60px; /* 必要に応じ調整 */
+  overflow: visible; /* サジェストをはみ出しても切れないように */
+}
+
+.header-left {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.header-right nav {
+  position: relative; /* サジェストの絶対位置基準 */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-right nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.header-right input {
+  padding: 5px;
+  margin-left: 10px;
+}
+
+.header-right button {
+  background-color: #005a99;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+/* メインレイアウト */
+.row-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  gap: 20px;
+}
+
+.left-info {
+  flex: 0 0 400px;
+}
+
+.right-list {
+  flex: 0 0 200px;
+}
+
+.left-info ul,
+.right-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.left-info li,
+.right-list li {
+  padding: 5px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+/* 検索エリア */
+.center-search {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  white-space: nowrap;
+}
+
+.center-search input,
+.center-search button {
+  height: 40px;           /* 高さを揃える */
+  line-height: 40px;      /* テキスト縦中央 */
+  vertical-align: middle; /* 縦位置合わせ */
+  font-size: 16px;
+  box-sizing: border-box; /* パディング込みで幅を制御 */
+}
+
+.center-search input {
+  width: 300px;
+  padding: 0 10px;        /* 上下パディングを0に */
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.center-search button {
+  padding: 0 20px;
+  background-color: #007acc;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* サジェストボックス */
+.suggestion-box {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-width: 300px;
+  background: #f8f8f8;
+  border: 1px solid #ccc;
+  padding: 5px;
+  box-sizing: border-box;
+  z-index: 1000;
+  display: none; /* 初期は非表示 */
+  text-align: left;
+  margin-top: 2px;
+}
+
+.suggestion-box div {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.suggestion-box div:hover {
+  background-color: #e0f0ff;
+}
+
+/* ボタン大きめのスタイル */
+.big-buttons button {
+  margin: 10px 5px;
+  padding: 15px 20px;
+  height: 200px; /* 高さを大きく */
+  font-size: 30px;
+  background-color: #e6f2ff;
+  border: 1px solid #007acc;
+  cursor: pointer;
+  color: #005a99;
+  font-weight: bold;
+}
+
+/* フッター */
+footer {
+  background-color: #f0f0f0;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.footer-links a {
+  margin: 0 10px;
+  color: #007acc;
+  text-decoration: none;
+}
+
+/* ヘッダーの検索入力に position: relative を付ける */
+#header-search {
+  position: relative;
+  z-index: 1001; /* サジェストより前に */
+}
+
+/* ヘッダーサジェストボックスは入力ボックスの直下に表示 */
+#header-suggestion-box {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 250px; /* 入力ボックスの幅に合わせて調整 */
+  background: #f8f8f8;
+  border: 1px solid #ccc;
+  padding: 5px;
+  box-sizing: border-box;
+  z-index: 1000;
+  display: none;
+  color: black; /* 文字色を黒に */
+  margin-top: 2px;
+}
+
+/* メインのサジェストは input-wrapper に相対位置があるのでこのままでOK */
+#main-suggestion-box {
+  color: black; /* 文字色を黒に */
+}
